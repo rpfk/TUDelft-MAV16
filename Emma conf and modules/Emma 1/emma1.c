@@ -55,7 +55,7 @@ uint8_t emma69(uint8_t waypoint) {
 	double wps[6] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y};
 	int i = 0;
 
-	struct *pos = stateGetPositionEnu_i(); // Get your current position EnuCoor_i
+	struct EnuCoor_i *pos = stateGetPositionEnu_i(); // Get your current position 
 	
 	printf("Current pos \n");
         printf("posX= %f \n", pos->x);

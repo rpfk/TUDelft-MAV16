@@ -13,6 +13,7 @@ pathname = os.path.dirname(sys.argv[0])
 print 'path =', pathname
 
 basepath = pathname.strip("TUDelft-MAV16")
+print 'basepath =', basepath
 
 # Add files here
 files = [["TUDelft-MAV16/Emma conf and modules/emma_airframe.xml","paparazzi/conf/airframes/TUDELFT/emma_airframe.xml"],
