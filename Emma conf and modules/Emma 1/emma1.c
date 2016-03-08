@@ -60,6 +60,7 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("Current pos \n");
         printf("posX= %d \n", pos->x);
         printf("posY= %d \n", pos->y);
+        printf("\n");
        
 	float wpX = waypoint_get_x(waypoint);
 	float wpY = waypoint_get_y(waypoint);
@@ -67,11 +68,13 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("Current wp \n");
         printf("wpX: %f \n", wpX);
         printf("wpY: %f \n", wpY);
+        printf("\n");
         
 	float dist_curr = (wpX -  POS_FLOAT_OF_BFP(pos->x))*(wpX -  POS_FLOAT_OF_BFP(pos->x)) + (wpY -  POS_FLOAT_OF_BFP(pos->y))*(wpY -  POS_FLOAT_OF_BFP(pos->y)); // POS_BFP_OF_REAL
 
 	printf("Dist to current wp \n");	
         printf("dist_curr: %f \n", dist_curr);        
+        printf("\n");
 
         float dist1 = (wpX - wp1_x)*(wpX - wp1_x) + (wpY - wp1_y)*(wpY - wp1_y); // Dist between current wp and navigation wps
 	float dist2 = (wpX - wp2_x)*(wpX - wp2_x) + (wpY - wp2_y)*(wpY - wp2_y);
@@ -91,11 +94,13 @@ uint8_t emma69(uint8_t waypoint) {
         printf("Set waypoint to \n");
 	printf("wpsX: %f \n",wps[(i-1)*2]);
 	printf("wpsY: %f \n",wps[(i-1)*2+1]);
+        printf("\n");
 	waypoint_set_xy_i(waypoint, wps[(i-1)*2], wps[(i-1)*2+1]);
         
 	if (count < 2) {count = 2;}
 	else {count = 1;}
         printf("Count: %d \n", count);
+        printf("\n");
 
 	return FALSE;
 
