@@ -32,6 +32,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int count = 1;
+
 void emma_init() {
 	// initialize variables
 
@@ -90,6 +92,10 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("wpsX: %f \n",wps[(i-1)*2]);
 	printf("wpsY: %f \n",wps[(i-1)*2+1]);
 	waypoint_set_xy_i(waypoint, wps[(i-1)*2], wps[(i-1)*2+1]);
+        
+	if (count < 2) {count = 2;}
+	else {count = 1;}
+        printf("Count: %d \n", count);
 
 	return FALSE;
 
