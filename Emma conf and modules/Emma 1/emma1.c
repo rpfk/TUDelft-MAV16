@@ -51,7 +51,7 @@ uint8_t emma69(uint8_t waypoint) {
 	float wp2_y = 2.;
 	float wp3_x = -2.;
 	float wp3_y = 2.;
-	float dist_threshold = 0.1;
+	float dist_threshold = 0.0001;
 	double wps[6] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y};
 	int i = 0;
 
@@ -92,6 +92,7 @@ uint8_t emma69(uint8_t waypoint) {
 
 	// Set the waypoint to the calculated position
         printf("Set waypoint to \n");
+	printf("i: %d \n", i);
 	printf("wpsX: %f \n",wps[(i-1)*2]);
 	printf("wpsY: %f \n",wps[(i-1)*2+1]);
         printf("\n");
