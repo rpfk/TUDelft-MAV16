@@ -76,20 +76,20 @@ uint8_t emma69(uint8_t waypoint) {
 	float dist3 = (wpX - wp3_x)*(wpX - wp3_x) + (wpY - wp3_y)*(wpY - wp3_y);
 	
 	
-	if (dist1 < dist2 && dist1 < dist3){i=1;} // If current wp closest to nav waypoint 1
+	if (dist1 < dist2 && dist1 < dist3){i=1;} 
 	else if (dist2 < dist1 && dist2 < dist3){i=2;}
 	else {i=3;}
 
 	if (dist_curr < dist_threshold*dist_threshold){
 		i = i + 1;
 		if (i> 3){i=1;}
-		
 	}
 
 	// Set the waypoint to the calculated position
-	//printf(wps[i*2-1]);
-	//printf(wps[i*2]);
-	waypoint_set_xy_i(waypoint, wps[i*2-1], wps[i*2]);
+        printf("Set waypoint to \n");
+	printf("wpsX: %f \n",wps[(i-1)*2]);
+	printf("wpsY: %f \n",wps[(i-1)*2+1]);
+	waypoint_set_xy_i(waypoint, wps[(i-1)*2], wps[(i-1)*2+1]);
 
 	return FALSE;
 
