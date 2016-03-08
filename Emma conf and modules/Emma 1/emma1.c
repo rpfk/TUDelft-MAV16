@@ -53,32 +53,39 @@ uint8_t emma69(uint8_t waypoint) {
 	double wps[6] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y};
 	int i = 0;
 
-	struct EnuCoor_i *pos = stateGetPositionEnu_i(); // Get your current position
+	struct *pos = stateGetPositionEnu_i(); // Get your current position EnuCoor_i
 	
+	printf("Current pos \n");
+        printf("posX= %f \n", pos->x);
+        printf("posY= %f \n", pos->y);
+       
 	float wpX = waypoint_get_x(waypoint);
 	float wpY = waypoint_get_y(waypoint);
-
+        
+	printf("Current wp \n");
         printf("wpX: %f \n", wpX);
         printf("wpY: %f \n", wpY);
 	
-	float dist2 = (POS_BFP_OF_REAL(wpX) - pos->x)*(POS_BFP_OF_REAL(wpX) - pos->x) + (POS_BFP_OF_REAL(wpY) - pos->y)*(POS_BFP_OF_REAL(wpY) - pos->y);
-	
-        printf("dist2: %f \n", dist2);        
+	float dist_curr = (POS_BFP_OF_REAL(wpX) - pos->x)*(POS_BFP_OF_REAL(wpX) - pos->x) + (POS_BFP_OF_REAL(wpY) - pos->y)*(POS_BFP_OF_REAL(wpY) - pos->y);
 
-        float dist3 = (wpX - wp1_x)*(wpX - wp1_x) + (wpY - wp1_y)*(wpY - wp1_y);
-	float dist4 = (wpX - wp2_x)*(wpX - wp2_x) + (wpY - wp2_y)*(wpY - wp2_y);
-	float dist5 = (wpX - wp3_x)*(wpX - wp3_x) + (wpY - wp3_y)*(wpY - wp3_y);
+	printf("Dist to current wp \n");	
+        printf("dist_curr: %f \n", dist_curr);        
+
+        float dist1 = (wpX - wp1_x)*(wpX - wp1_x) + (wpY - wp1_y)*(wpY - wp1_y); // Dist between current wp and navigation wps
+	float dist2 = (wpX - wp2_x)*(wpX - wp2_x) + (wpY - wp2_y)*(wpY - wp2_y);
+	float dist3 = (wpX - wp3_x)*(wpX - wp3_x) + (wpY - wp3_y)*(wpY - wp3_y);
 	
 	
-	if (dist3 < dist4 && dist3 < dist5){i=1;}
-	else if (dist4 < dist3 && dist4 < dist5){i=2;}
+	if (dist1 < dist2 && dist1 < dist3){i=1;} // If current wp closest to nav waypoint 1
+	else if (dist2 < dist1 && dist2 < dist3){i=2;}
 	else {i=3;}
 
-	if (dist2 < dist_threshold*dist_threshold){
+	if (dist_curr < dist_threshold*dist_threshold){
 		i = i + 1;
 		if (i> 3){i=1;}
 		
 	}
+
 	// Set the waypoint to the calculated position
 	//printf(wps[i*2-1]);
 	//printf(wps[i*2]);
