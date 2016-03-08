@@ -58,8 +58,8 @@ uint8_t emma69(uint8_t waypoint) {
 	struct EnuCoor_i *pos = stateGetPositionEnu_i(); // Get your current position 
 	
 	printf("Current pos \n");
-        printf("posX= %d \n", pos->x);
-        printf("posY= %d \n", pos->y);
+        printf("posX= %f \n", POS_FLOAT_OF_BFP(pos->x));
+        printf("posY= %f \n", POS_FLOAT_OF_BFP(pos->y));
         printf("\n");
        
 	float wpX = waypoint_get_x(waypoint);
