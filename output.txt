@@ -1,0 +1,384 @@
+Script started on Mit 09 Mär 2016 09:38:51 CET
+]0;wplaetinck@wplaetinck-Aspire-5750G: ~/TUDelft-MAV16wplaetinck@wplaetinck-Aspire-5750G:~/TUDelft-MAV16$ telnet 192.168.42.1
+Trying 192.168.42.1...
+Connected to 192.168.42.1.
+Escape character is '^]'.
+
+
+
+BusyBox v1.20.2 (2015-07-01 15:57:53 CEST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+/ # cd data/ftp/internal_000/paparazzi
+/data/ftp/internal_000/paparazzi # killall -9 ap.elf && ./ap.elf
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+[video] Could not write register 3ED8
+Da: FFF8
+Dt: FFF8
+Done!
+Current schedparam: policy 0, prio 0
+New schedparam: policy 1, prio 29
+Current schedparam: policy 0, prio 0
+New schedparam: policy 1, prio 10
+Current pos     posX= -0.046875         posY= 0.078125  
+Current wp      wpX: -0.046875  wpY: 0.066406   
+Dist to current wp      dist_curr: 0.000137     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.046875         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006424     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.046875         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006424     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.046875         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.005569     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.046875         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.005569     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.058594         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.007843     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.058594         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006989     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.046875         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006424     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.046875         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006424     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.046875         posY= 0.066406  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006424     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.058594         posY= 0.078125  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.009354     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.058594         posY= 0.078125  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.009354     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.058594         posY= 0.078125  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.009354     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.078125  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.010452     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.089844  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.012970     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.089844  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014481     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.097656  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.016068     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.089844  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.012970     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.089844  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.012970     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.097656  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014557     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.109375  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.017166     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.097656  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014557     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.109375  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.017166     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.019058     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.058594         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.018204     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.058594         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.018204     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.109375  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.017166     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.109375  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.017166     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.019058     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.019058     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.128906  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.023636     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.020569     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.128906  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.023636     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.128906  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.023636     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.020569     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.020569     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.128906  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.023636     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.020569     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.019058     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.117188  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.019058     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.109375  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.017166     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.097656  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014557     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.097656  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014557     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.089844  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.014481     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.078125  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.012329     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.078125  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.012329     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.066406  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.010452     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.058594  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.009354     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.089844         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.012115     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.089844         posY= 0.046875  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.009720     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.097656         posY= 0.046875  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.012650     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.097656         posY= 0.046875  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.011063     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.097656         posY= 0.046875  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.011063     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.097656         posY= 0.039062  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.010269     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 1        
+Current pos     posX= -0.097656         posY= 0.039062  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.010269     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.089844         posY= 0.039062  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.008926     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.089844         posY= 0.039062  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.010513     
+Set waypoint to         i: 1    wpsX: -2.000000         wpsY: -2.000000         
+Count: 2        
+Current pos     posX= -0.089844         posY= 0.046875  
+Current wp      wpX: -0.007812  wpY: -0.007812  
+Dist to current wp      dist_curr: 0.009720     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.078125         posY= 0.039062  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.008362     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.078125         posY= 0.046875  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.008911     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.066406         posY= 0.046875  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.007034     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.066406         posY= 0.046875  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.007034     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.058594         posY= 0.046875  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.005936     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+Current pos     posX= -0.058594         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.006989     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 1        
+Current pos     posX= -0.046875         posY= 0.058594  
+Current wp      wpX: 0.007812   wpY: 0.007812   
+Dist to current wp      dist_curr: 0.005569     
+Set waypoint to         i: 2    wpsX: 2.000000  wpsY: 2.000000  
+Count: 2        
+exit
+^CReceived SIGINT
+Press Ctrl-C again to stop the program
+^CReceived SIGINT
+Leaving now
+/data/ftp/internal_000/paparazzi # exit
+Connection closed by foreign host.
+]0;wplaetinck@wplaetinck-Aspire-5750G: ~/TUDelft-MAV16wplaetinck@wplaetinck-Aspire-5750G:~/TUDelft-MAV16$ exit
+exit

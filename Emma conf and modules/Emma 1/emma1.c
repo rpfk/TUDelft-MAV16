@@ -96,7 +96,14 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("wpsX: %f \t",wps[(i-1)*2]);
 	printf("wpsY: %f \t",wps[(i-1)*2+1]);
         printf("\n");
-	waypoint_set_xy_i(waypoint, wps[(i-1)*2], wps[(i-1)*2+1]);
+
+        struct enu_newWPstruct{
+		float wps[(i-1)*2]; 
+		float wps[(i-1)*2+1]; 
+		float pos->z; 
+        };
+
+	waypoint_set_enu(waypoint, enu_newWPstruct);
         
 	if (count < 2) {count = 2;}
 	else {count = 1;}
