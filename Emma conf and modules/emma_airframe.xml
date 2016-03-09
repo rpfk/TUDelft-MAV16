@@ -216,18 +216,18 @@
   </section>
 
   <section name="GUIDANCE_V" prefix="GUIDANCE_V_">
-    <define name="HOVER_KP" value="283"/>
+    <define name="HOVER_KP" value="400"/>
     <define name="HOVER_KD" value="82"/>
-    <define name="HOVER_KI" value="70"/>
+    <define name="HOVER_KI" value="100"/>
     <define name="NOMINAL_HOVER_THROTTLE" value="0.5"/>
     <define name="ADAPT_THROTTLE_ENABLED" value="FALSE"/>
   </section>
 
   <section name="GUIDANCE_H" prefix="GUIDANCE_H_">
     <define name="MAX_BANK" value="32" unit="deg"/>
-    <define name="PGAIN" value="79"/>
-    <define name="DGAIN" value="100"/>
-    <define name="IGAIN" value="30"/>
+    <define name="PGAIN" value="120"/>
+    <define name="DGAIN" value="50"/>
+    <define name="IGAIN" value="60"/>
   </section>
 
   <section name="NAVIGATION" prefix="NAV_">

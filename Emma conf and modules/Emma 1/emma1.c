@@ -33,7 +33,6 @@
 #include <stdio.h>
 #include <inttypes.h>
 
-int count = 1;
 int i = 1;
 
 void emma_init() {
@@ -46,16 +45,22 @@ void emmafunction() {
 	//printf("it's working!!!!!");
 }
 
-uint8_t emma69(uint8_t waypoint) {
-	float wp1_x = -2.;
-	float wp1_y = -2.;
-	float wp2_x = 2.;
-	float wp2_y = 2.;
-	float wp3_x = -2.;
-	float wp3_y = 2.;
+uint8_t emma69(uint8_t waypoint ) {
+	float wp1_x = -1.0;
+	float wp1_y = 1.0;
+        float h1 = 0.0;
+	float wp2_x = -1.0;
+	float wp2_y = -1.0;
+        float h2 = 0.0;
+	float wp3_x = 1.0;
+	float wp3_y = 1.0;
+        float h3 = 0.0;
+	float wp4_x = 1.0;
+	float wp4_y = -1.0;
+        float h4 = 0.0;
 	float dist_threshold = 0.1;
-	double wps[6] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y};
-//	int i = 1;
+	double wps[8] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y, wp4_x, wp4_y};
+        double headings[4] = {h1,h2,h3,h4}; 
 
         struct EnuCoor_i new_coor;
         struct EnuCoor_i *pos = stateGetPositionEnu_i(); // Get your current position
@@ -93,7 +98,7 @@ uint8_t emma69(uint8_t waypoint) {
 
 	if (dist_curr < dist_threshold*dist_threshold){
 		i = i + 1;
-		if (i> 3){i=1;}
+		if (i> 4){i=1;}
 	}
 
 	// Set the waypoint to the calculated position
@@ -110,10 +115,11 @@ uint8_t emma69(uint8_t waypoint) {
 	// Set the waypoint to the calculated position
         waypoint_set_xy_i(waypoint, new_coor.x, new_coor.y);
         
-	if (count < 2) {count = 2;}
-	else {count = 1;}
-        printf("Count: %d \t", count);
+        // Set heading to requested
+        nav_set_heading_deg(headings[i-1]);
+
         printf("\n");
+	printf("\n");
 
 	return FALSE;
 
