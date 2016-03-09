@@ -1,0 +1,5 @@
+telnet 192.168.42.1
+
+cd data/ftp/internal_000
+
+killall -9 ap.elf && ./ap.elf
