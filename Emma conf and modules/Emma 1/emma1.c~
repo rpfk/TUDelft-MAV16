@@ -61,19 +61,21 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct EnuCoor_f *pos = stateGetPositionEnu_f(); // Get your current position 
 	
 	printf("Current pos \t");
-        printf("posX= %" PRIu32 "\t", pos->x); //POS_FLOAT_OF_BFP(pos->x)
-        printf("posY= %" PRIu32 "\t", pos->y); //POS_FLOAT_OF_BFP(pos->y)
+        printf("posX= %f \t", POS_FLOAT_OF_BFP(pos->x)); //POS_FLOAT_OF_BFP(pos->x)
+        printf("posY= %f \t", POS_FLOAT_OF_BFP(pos->y)); //POS_FLOAT_OF_BFP(pos->y)
         printf("\n");
        
-	uint32_t wpX = POS_BFP_OF_REAL(waypoint_get_x(waypoint));
-	uint32_t wpY = POS_BFP_OF_REAL(waypoint_get_y(waypoint));
+	float wpX = waypoint_get_x(waypoint);
+	float wpY = waypoint_get_y(waypoint);
         
 	printf("Current wp \t");
-        printf("wpX: %" PRIu32 "\t", wpX);
-        printf("wpY: %" PRIu32 "\t", wpY);
+        printf("wpX: %f \t", wpX);
+        printf("wpY: %f \t", wpY);
         printf("\n");
         
-	float dist_curr = POS_FLOAT_OF_BFP((wpX -  pos->x)*(wpX -  pos->x) + (wpY -  pos->y)*(wpY -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
+	//float dist_curr = POS_FLOAT_OF_BFP((POS_BFP_OF_REAL(wpX) -  pos->x)*(POS_BFP_OF_REAL(wpX) -  pos->x) + (POS_BFP_OF_REAL(wpY) -  pos->y)*(POS_BFP_OF_REAL(wpY) -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
+	
+	float dist_curr = (wpX -  POS_FLOAT_OF_BFP(pos->x))*(wpX -  POS_FLOAT_OF_BFP(pos->x)) + (wpY -  POS_FLOAT_OF_BFP(pos->y))*(wpY -  POS_FLOAT_OF_BFP(pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
 
 	printf("Dist to current wp \t");	
         printf("dist_curr: %f \t", dist_curr);        

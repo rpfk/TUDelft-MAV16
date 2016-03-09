@@ -73,7 +73,9 @@ uint8_t emma69(uint8_t waypoint) {
         printf("wpY: %f \t", wpY);
         printf("\n");
         
-	float dist_curr = POS_FLOAT_OF_BFP((POS_BFP_OF_REAL(wpX) -  pos->x)*(POS_BFP_OF_REAL(wpX) -  pos->x) + (POS_BFP_OF_REAL(wpY) -  pos->y)*(POS_BFP_OF_REAL(wpY) -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
+	//float dist_curr = POS_FLOAT_OF_BFP((POS_BFP_OF_REAL(wpX) -  pos->x)*(POS_BFP_OF_REAL(wpX) -  pos->x) + (POS_BFP_OF_REAL(wpY) -  pos->y)*(POS_BFP_OF_REAL(wpY) -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
+	
+	float dist_curr = (wpX -  POS_FLOAT_OF_BFP(pos->x))*(wpX -  POS_FLOAT_OF_BFP(pos->x)) + (wpY -  POS_FLOAT_OF_BFP(pos->y))*(wpY -  POS_FLOAT_OF_BFP(pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
 
 	printf("Dist to current wp \t");	
         printf("dist_curr: %f \t", dist_curr);        
