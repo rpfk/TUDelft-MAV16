@@ -31,6 +31,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <inttypes.h>
 
 int count = 1;
 
@@ -55,11 +56,13 @@ uint8_t emma69(uint8_t waypoint) {
 	double wps[6] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y};
 	int i = 1;
 
-	struct EnuCoor_f *pos = stateGetPositionEnu_f(); // Get your current position 
+        struct EnuCoor_i new_coor;
+        struct EnuCoor_i *pos = stateGetPositionEnu_i(); // Get your current position
+	//struct EnuCoor_f *pos = stateGetPositionEnu_f(); // Get your current position 
 	
 	printf("Current pos \t");
-        printf("posX= %f \t", pos->x); //POS_FLOAT_OF_BFP(pos->x)
-        printf("posY= %f \t", pos->y); //POS_FLOAT_OF_BFP(pos->y)
+        printf("posX= %f \t", POS_FLOAT_OF_BFP(pos->x)); //POS_FLOAT_OF_BFP(pos->x)
+        printf("posY= %f \t", POS_FLOAT_OF_BFP(pos->y)); //POS_FLOAT_OF_BFP(pos->y)
         printf("\n");
        
 	float wpX = waypoint_get_x(waypoint);
@@ -70,7 +73,7 @@ uint8_t emma69(uint8_t waypoint) {
         printf("wpY: %f \t", wpY);
         printf("\n");
         
-	float dist_curr = (wpX -  pos->x)*(wpX -  pos->x) + (wpY -  pos->y)*(wpY -  pos->y); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
+	float dist_curr = POS_FLOAT_OF_BFP((POS_BFP_OF_REAL(wpX) -  pos->x)*(POS_BFP_OF_REAL(wpX) -  pos->x) + (POS_BFP_OF_REAL(wpY) -  pos->y)*(POS_BFP_OF_REAL(wpY) -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
 
 	printf("Dist to current wp \t");	
         printf("dist_curr: %f \t", dist_curr);        
@@ -97,13 +100,12 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("wpsY: %f \t",wps[(i-1)*2+1]);
         printf("\n");
 
-        struct enu_newWPstruct{
-		float wps[(i-1)*2]; 
-		float wps[(i-1)*2+1]; 
-		float pos->z; 
-        };
+	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
+	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
+	new_coor.z = pos->z;
 
-	waypoint_set_enu(waypoint, enu_newWPstruct);
+	// Set the waypoint to the calculated position
+        waypoint_set_xy_i(waypoint, new_coor.x, new_coor.y);
         
 	if (count < 2) {count = 2;}
 	else {count = 1;}
