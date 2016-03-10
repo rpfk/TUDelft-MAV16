@@ -20,7 +20,9 @@ files = [["TUDelft-MAV16/Emma conf and modules/emma_airframe.xml","paparazzi/con
          ["TUDelft-MAV16/Emma conf and modules/tudelft_course2016_avoid_orange_cyberzoo.xml","paparazzi/conf/flight_plans/TUDELFT/tudelft_course2016_avoid_orange_cyberzoo.xml"],
          ["TUDelft-MAV16/Emma conf and modules/Emma 1/emma1.c","paparazzi/sw/airborne/modules/emma1/emma1.c"],
          ["TUDelft-MAV16/Emma conf and modules/Emma 1/emma1.h","paparazzi/sw/airborne/modules/emma1/emma1.h"],
-         ["TUDelft-MAV16/Emma conf and modules/Emma 1/emma1.xml","paparazzi/conf/modules/emma1.xml"]]
+         ["TUDelft-MAV16/Emma conf and modules/Emma 1/emma1.xml","paparazzi/conf/modules/emma1.xml"],
+         ["TUDelft-MAV16/Emma conf and modules/colorfilter.c","paparazzi/sw/airborne/modules/computer_vision/colorfilter.c"],
+         ["TUDelft-MAV16/Emma conf and modules/colorfilter.h","paparazzi/sw/airborne/modules/computer_vision/colorfilter.h"]]
 
 print 
 switch = input("""Which direction to copy 
