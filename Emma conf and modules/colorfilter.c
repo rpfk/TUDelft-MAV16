@@ -58,6 +58,7 @@ bool_t colorfilter_func(struct image_t* img)
 
   //emsimg = img;
   wouter = 2;
+  color_count = 1;
 
   return FALSE;
 }

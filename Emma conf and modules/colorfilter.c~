@@ -41,7 +41,8 @@ uint8_t color_cr_max  = 255;
 
 // Result
 int color_count = 0;
-struct emma_image *emsimg;
+//struct emma_image *emsimg;
+int wouter = 1;
 
 // Function
 bool_t colorfilter_func(struct image_t* img);
@@ -55,7 +56,8 @@ bool_t colorfilter_func(struct image_t* img)
   //    );
   //DOWNLINK_SEND_COLORFILTER(DefaultChannel, DefaultDevice, &color_count);
 
-  emsimg = img;
+  //emsimg = img;
+  wouter = 2;
 
   return FALSE;
 }
