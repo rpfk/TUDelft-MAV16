@@ -25,8 +25,9 @@ files = [["TUDelft-MAV16/Emma conf and modules/emma_airframe.xml","paparazzi/con
          ["TUDelft-MAV16/Emma conf and modules/colorfilter.h","paparazzi/sw/airborne/modules/computer_vision/colorfilter.h"]]
 
 print 
-switch = input("""Which direction to copy 
-1 To Github, 2 To Paparazzi:    """)
+#switch = input("""Which direction to copy 
+#1 To Github, 2 To Paparazzi:    """)
+switch = 2
 
 for f in files:
     
