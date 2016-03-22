@@ -47,9 +47,9 @@ void emma_init() {
 
 }
 void emmafunction() {
-
-	// no idea
-	//printf("it's working!!!!!");
+        // periodic
+        //printf("wouter is: %d", color_count);
+	
 }
 uint8_t emma69(uint8_t waypoint) {
 	float wp1_x = -1.0;
@@ -118,7 +118,8 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	printf("image height:" "%f \t", emsimg->h);
+	//printf("image height: %f \t", image_t.h);
+        printf("wouter is: %d", color_count);
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
