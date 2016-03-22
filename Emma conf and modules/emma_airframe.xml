@@ -51,8 +51,8 @@
       <define name="VIEWVIDEO_DOWNSIZE_FACTOR" value="1"/>
     </load>
     -->
-    <load name="cv_colorfilter.xml">
-    <load name="orange_avoider.xml"/>
+    <load name="cv_colorfilter.xml"/>
+    <!--<load name="orange_avoider.xml"/>-->
     <load name="emma1.xml"/> 
   </modules>
 

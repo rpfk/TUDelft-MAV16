@@ -27,7 +27,6 @@
 //#define BEBOP_FRONT_CAMERA_H
 
 #include "modules/emma1/emma1.h"
-#include "modules/orange_avoider/orange_avoider.h"
 #include "modules/computer_vision/colorfilter.h"
 #include "firmwares/rotorcraft/navigation.h"
 #include "state.h"
@@ -118,8 +117,9 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	//printf("image height: %f \t", image_t.h);
-        printf("wouter is: %d", color_count);
+	printf("image height: %d \t", emsimg->h);
+        //printf("wouter is: %d", color_count);
+
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
