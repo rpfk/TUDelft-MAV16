@@ -41,22 +41,18 @@ uint8_t color_cr_max  = 255;
 
 // Result
 int color_count = 0;
-struct emma_image *emsimg;
 
 // Function
 bool_t colorfilter_func(struct image_t* img);
 bool_t colorfilter_func(struct image_t* img)
 {
   // Filter
-  //color_count = image_yuv422_colorfilt(img,img,
-  //    color_lum_min,color_lum_max,
-  //    color_cb_min,color_cb_max,
-  //    color_cr_min,color_cr_max
-  //    );
-  //DOWNLINK_SEND_COLORFILTER(DefaultChannel, DefaultDevice, &color_count);
-
-  emsimg = img;
-
+  color_count = image_yuv422_colorfilt(img,img,
+      color_lum_min,color_lum_max,
+      color_cb_min,color_cb_max,
+      color_cr_min,color_cr_max
+      );
+  DOWNLINK_SEND_COLORFILTER(DefaultChannel, DefaultDevice, &color_count);
   return FALSE;
 }
 

@@ -114,12 +114,11 @@ uint8_t emma69(uint8_t waypoint) {
 	printf("wpsY: %f \t",wps[(i-1)*2+1]);
         printf("\n");
 
-	
 	//struct image_t *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	printf("image height:" "%f \t", img_final->h);
+	printf("image height:" "%f \t", emsimg->h);
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
