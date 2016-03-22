@@ -32,6 +32,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <inttypes.h>
+//#include "modules/computer_vision/lib/vision/image.h"
+//#include "modules/computer_vision/cv.h"
+#include "modules/computer_vision/bebop_front_camera.h"
 
 int i = 1;
 
@@ -51,13 +54,13 @@ uint8_t emma69(uint8_t waypoint ) {
         float h1 = 0.0;
 	float wp2_x = -1.0;
 	float wp2_y = -1.0;
-        float h2 = 90.0;
+        float h2 = 0.0;
 	float wp3_x = 1.0;
 	float wp3_y = 1.0;
-        float h3 = 180.0;
+        float h3 = 0.0;
 	float wp4_x = 1.0;
 	float wp4_y = -1.0;
-        float h4 = 270.0;
+        float h4 = 0.0;
 	float dist_threshold = 0.1;
 	double wps[8] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y, wp4_x, wp4_y};
         double headings[4] = {h1,h2,h3,h4}; 
@@ -108,6 +111,11 @@ uint8_t emma69(uint8_t waypoint ) {
 	printf("wpsY: %f \t",wps[(i-1)*2+1]);
         printf("\n");
 
+	
+	struct image_t *img = v4l2_image_get(bebop_front_camera.dev, &img);
+
+	//printf("image height:" "%f \t", img.h)
+	
 	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
 	new_coor.z = pos->z;
@@ -124,5 +132,4 @@ uint8_t emma69(uint8_t waypoint ) {
 	return FALSE;
 
 }
-
 

@@ -23,6 +23,9 @@
  * This is a first module for Emma
  */
 
+#ifndef BEBOP_FRONT_CAMERA_H
+#define BEBOP_FRONT_CAMERA_H
+
 #include "modules/emma1/emma1.h"
 //#include "modules/orange_avoider/orange_avoider.h"
 //#include "modules/computer_vision/colorfilter.h"
@@ -32,6 +35,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <inttypes.h>
+//#include "modules/computer_vision/lib/vision/image.h"
+//#include "modules/computer_vision/cv.h"
+#include "modules/computer_vision/bebop_front_camera.h"
 
 int i = 1;
 
@@ -108,6 +114,11 @@ uint8_t emma69(uint8_t waypoint ) {
 	printf("wpsY: %f \t",wps[(i-1)*2+1]);
         printf("\n");
 
+	
+	struct image_t *img = v4l2_image_get(bebop_front_camera.dev, &img);
+
+	//printf("image height:" "%f \t", img.h)
+	
 	new_coor.x = POS_BFP_OF_REAL(wps[(i-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(i-1)*2+1]);
 	new_coor.z = pos->z;
@@ -124,5 +135,4 @@ uint8_t emma69(uint8_t waypoint ) {
 	return FALSE;
 
 }
-
 
