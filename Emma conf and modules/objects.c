@@ -69,7 +69,6 @@ uint16_t BestEscape(struct image_label_t labels, uint16_t width )
 	if(x_max < width)
 	{
 		map[i*2 + 1] = width;
-		
 	}
 
 	// uint16_t sortedmap[20];
@@ -80,7 +79,7 @@ uint16_t BestEscape(struct image_label_t labels, uint16_t width )
 	int BiggestOpenIndex = 0;
 	int CurrentOpenDist = 0;
 
-	for(int j = 0; j < 20-1; j++)
+	for(int j = 0; j < 20-1; j = j+2)
 	{
 		CurrentOpenDist = map[j+1] - map[j];
 		
