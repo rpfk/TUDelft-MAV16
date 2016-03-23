@@ -1,6 +1,6 @@
 #include <stdlib.h>     /* qsort */
 
-void Objects(struct image_t *img)
+void ScanObjects(struct image_t *img)
 {
 
 	<!--
@@ -39,7 +39,7 @@ void Objects(struct image_t *img)
 		   printf(labels[i].id);
 		}
 		
-		BestEscape(labels, img->w);
+		uint16_t xtarget = BestEscape(labels, img->w);
 		
 	}
 
@@ -47,7 +47,7 @@ void Objects(struct image_t *img)
 
 void ObjectsInit(void)
 {
-	cv_add(Objects);
+	cv_add(ScanObjects);
 }
 
 uint16_t BestEscape(struct image_label_t labels, uint16_t width )
