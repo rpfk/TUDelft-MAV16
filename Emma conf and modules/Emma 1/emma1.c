@@ -339,7 +339,7 @@ uint8_t emma69(uint8_t waypoint) {
         //emmacount = image_yuv422_colorfilt(emsimg,emsimg,color_lum_min,color_lum_max,color_cb_min,color_cb_max,color_cr_min,color_cr_max);
         //printf("emmacount is: %d \n", emmacount);
 
-        //ScanObjects(emsimg);
+        ScanObjects(emsimg);
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(k-1)*2+1]);

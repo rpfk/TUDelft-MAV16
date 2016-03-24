@@ -51,17 +51,17 @@ bool_t colorfilter_func(struct image_t* img);
 bool_t colorfilter_func(struct image_t* img)
 {
   // Filter
-  color_count = image_yuv422_colorfilt(img,img,
-      color_lum_min,color_lum_max,
-      color_cb_min,color_cb_max,
-      color_cr_min,color_cr_max
-      );
+  //color_count = image_yuv422_colorfilt(img,img,
+  //    color_lum_min,color_lum_max,
+  //    color_cb_min,color_cb_max,
+  //    color_cr_min,color_cr_max
+  //    );
   //DOWNLINK_SEND_COLORFILTER(DefaultChannel, DefaultDevice, &color_count);
 
   emsimg = img;
 
   //printf("image height raw: %d \t", img->h);
-  printf("colour_count raw is: %d \n", color_count);
+  //printf("colour_count raw is: %d \n", color_count);
 
   return FALSE;
 }

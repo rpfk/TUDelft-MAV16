@@ -253,7 +253,7 @@ uint8_t ScanObjects(struct image_t *img)
 	{
 		for(int j = 0; j < labels_count; j++)
 		{
-		   if (labels[j].pixel_cnt >= 269) {
+		   if (labels[j].pixel_cnt >= 100) {
 		       printf("labels ID %d \t", labels[j].id);
 		       printf("labels cnt %d \n", labels[j].pixel_cnt);
 		   }
