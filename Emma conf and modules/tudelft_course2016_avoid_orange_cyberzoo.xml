@@ -76,7 +76,7 @@
     </block>
     <block name="StayGoal">
       <go wp="GOAL"/>
-      <exception cond="block_time > 2" deroute="Emma Gaat Los"/>
+      <exception cond="block_time > 0.1" deroute="Emma Gaat Los"/>
     </block>
     <block name="Emma Gaat Los">
       <call fun="emma69(WP_GOAL)"/>

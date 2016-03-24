@@ -82,7 +82,6 @@
       <call fun="emma69(WP_GOAL)"/>
       <deroute block="StayGoal"/>
     </block>
-
     <block key="l" name="Land here" strip_button="Land Here" strip_icon="land-right.png">
       <call fun="NavSetWaypointHere(WP_TD)"/>
     </block>

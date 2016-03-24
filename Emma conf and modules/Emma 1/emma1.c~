@@ -319,17 +319,17 @@ uint8_t ScanObjects(struct image_t *img)
         return xtarget;
 }
 uint8_t emma69(uint8_t waypoint) {
-	float wp1_x = -0.45;
-	float wp1_y = 0.5;
+	float wp1_x = -0.0;
+	float wp1_y = 0.0;
         float h1 = 0.0;
-	float wp2_x = -0.5;
-	float wp2_y = 0.5;
+	float wp2_x = -0.0;
+	float wp2_y = 0.0;
         float h2 = 0.0;
-	float wp3_x = -0.45;
-	float wp3_y = 0.5;
+	float wp3_x = -0.0;
+	float wp3_y = 0.0;
         float h3 = 0.0;
-	float wp4_x = -0.5;
-	float wp4_y = 0.5;
+	float wp4_x = -0.0;
+	float wp4_y = 0.0;
         float h4 = 0.0;
 	float dist_threshold = 0.1;
 	double wps[8] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y, wp4_x, wp4_y};

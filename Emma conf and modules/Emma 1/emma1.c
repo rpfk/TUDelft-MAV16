@@ -403,6 +403,7 @@ uint8_t emma69(uint8_t waypoint) {
 	    if (newheading > 360) {newheading = newheading - 360;} 
 	    printf("newheading: %d", newheading);
             nav_set_heading_deg(newheading);
+	    prevheading = newheading;
         }
         else if (125 < xtarget < 145) {
             // continue straight        
@@ -414,6 +415,7 @@ uint8_t emma69(uint8_t waypoint) {
 	    if (newheading > 360) {newheading = newheading - 360;}
             printf("newheading: %d", newheading); 
             nav_set_heading_deg(newheading);
+	    prevheading = newheading;
 	}
         
 	
