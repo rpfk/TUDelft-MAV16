@@ -117,7 +117,7 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	printf("image height: %f \t", emsimg->h);
+	printf("image height: %d \t", emsimg->h);
         //printf("wouter is: %d", color_count);
 
 	

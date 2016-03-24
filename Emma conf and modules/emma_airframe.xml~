@@ -52,7 +52,7 @@
     </load>
     -->
     <load name="cv_colorfilter.xml"/>
-    <load name="orange_avoider.xml"/>
+    <!--<load name="orange_avoider.xml"/>-->
     <load name="emma1.xml"/> 
   </modules>
 

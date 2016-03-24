@@ -34,10 +34,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <inttypes.h>
-#include "modules/computer_vision/lib/vision/image.h"
+//#include "modules/computer_vision/lib/vision/image.h"
 #include "modules/computer_vision/cv.h"
-#include "modules/computer_vision/bebop_front_camera.h"
-#include "modules/computer_vision/video_thread.h"
+//#include "modules/computer_vision/bebop_front_camera.h"
+//#include "modules/computer_vision/video_thread.h"
 
 int i = 1;
 
