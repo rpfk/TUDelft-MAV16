@@ -1,4 +1,6 @@
-void Objects(struct image_t *img)
+#include <stdlib.h>     /* qsort */
+
+void ScanObjects(struct image_t *img)
 {
 
 	<!--
@@ -32,12 +34,12 @@ void Objects(struct image_t *img)
 
 	if labels_count > 0
 	{
-		for(i = 0; i < labels_count; i++)
+		for(int i = 0; i < labels_count; i++)
 		{
 		   printf(labels[i].id);
 		}
 		
-		   BestEscape(labels);
+		uint16_t xtarget = BestEscape(labels, img->w);
 		
 	}
 
@@ -45,16 +47,56 @@ void Objects(struct image_t *img)
 
 void ObjectsInit(void)
 {
-	cv_add(Objects);
+	cv_add(ScanObjects);
+}
+
+uint16_t BestEscape(struct image_label_t labels, uint16_t width )
+{
+
+	uint16_t map[20];
+	map[0] = 0;
+ 
+	for(int i = 0; i < labels_count; i++)
+	{
+		// printf(labels[i].x_min);		
+		uint16_t x_max = (labels[i].x_sum / labels[i].pixel_cnt - labels[i].x_min) * 2 + labels[i].x_min;
+		
+		map[i*2 + 1] = labels[i].x_min;
+		map[i*2 + 2] = x_max;
+		
+	}
+	
+	if(x_max < width)
+	{
+		map[i*2 + 1] = width;
+	}
+
+	// uint16_t sortedmap[20];
+
+	qsort (map, 20, sizeof(uint16_t), compare);
+
+	int BiggestOpenDist = 0;
+	int BiggestOpenIndex = 0;
+	int CurrentOpenDist = 0;
+
+	for(int j = 0; j < 20-1; j = j+2)
+	{
+		CurrentOpenDist = map[j+1] - map[j];
+		
+		if(CurrentOpenDist > BiggestOpenDist)
+		{
+			BiggestOpenDist = CurrentOpenDist;
+			BiggestOpenIndex = j;
+		}
+
+	}
+	
+	
+	return BiggestOpenDist / 2 + map[BiggestOpenIndex];	
 
 }
 
-uint16_t BestEscape(labels)
+int compare (const void * a, const void * b)
 {
-	for(i = 0; i < labels_count; i++)
-	{
-	   printf(labels[i].x_min);
-	}
-
-
+  return ( *(int*)a - *(int*)b );
 }
