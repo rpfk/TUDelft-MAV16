@@ -310,7 +310,7 @@ uint8_t ScanObjects(struct image_t *img)
 		}
 		
 		xtarget = BestEscape(labels, img->w);
-		
+		printf("xtarget: %d \n",xtarget);
 	}
         else {printf("lol");}
         
