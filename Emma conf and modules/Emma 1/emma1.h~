@@ -33,8 +33,6 @@ extern uint8_t emma69(uint8_t waypoint);
 
 #endif
 
-#include "modules/computer_vision/lib/vision/image.h"
-
 /* YUV Color Filter Parameters */
 struct image_filter_t {
   uint8_t y_min;            ///< YUV color filter

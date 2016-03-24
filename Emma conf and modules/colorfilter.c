@@ -32,12 +32,15 @@
 #include <std.h>
 
 // Filter Settings
-uint8_t color_lum_min = 105;
-uint8_t color_lum_max = 205;
-uint8_t color_cb_min  = 52;
-uint8_t color_cb_max  = 140;
-uint8_t color_cr_min  = 180;
-uint8_t color_cr_max  = 255;
+// cb is equiv to U
+// cr is equiv to V
+uint8_t color_lum_min = 0;
+uint8_t color_lum_max = 0;
+uint8_t color_cb_min  = 0;
+uint8_t color_cb_max  = 0;
+uint8_t color_cr_min  = 0;
+uint8_t color_cr_max  = 0;
+
 
 // Result
 int color_count = 0;
@@ -58,9 +61,8 @@ bool_t colorfilter_func(struct image_t* img)
 
   emsimg = img;
 
-  //printf("image height: %f \t", emsimg->h);
-  
-  color_count = 1;
+  //printf("image height raw: %d \t", img->h);
+  //printf("colour_count raw is: %d \n", color_count);
 
   return FALSE;
 }
