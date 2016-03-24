@@ -253,7 +253,10 @@ uint8_t ScanObjects(struct image_t *img)
 	{
 		for(int j = 0; j < labels_count; j++)
 		{
-		   printf("labels ID %d \n", labels[j].id);
+		   if (labels[j].pixel_cnt >= 20) {
+		       printf("labels ID %d \n", labels[j].id);
+		       printf("labels cnt %d \n", labels[j].pixel_cnt);
+		   }
 		}
 		
 		//uint16_t xtarget = BestEscape(labels, img->w);

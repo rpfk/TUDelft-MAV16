@@ -259,6 +259,7 @@ uint8_t ScanObjects(struct image_t *img)
 		//uint16_t xtarget = BestEscape(labels, img->w);
 		
 	}
+        else {printf("lol");}
         
         return FALSE;
 }
