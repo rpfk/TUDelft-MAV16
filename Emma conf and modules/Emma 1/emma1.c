@@ -52,7 +52,7 @@ void emma_init() {
 	//color_cb_max=122;
 	//color_cr_min=115;
 	//color_cr_max=175;
-        nav_set_heading_deg(0);
+        //nav_set_heading_deg(0);
 }
 void emmafunction() {
         // periodic
