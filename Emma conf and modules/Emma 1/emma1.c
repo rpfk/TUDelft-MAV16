@@ -254,7 +254,7 @@ uint8_t ScanObjects(struct image_t *img)
 		for(int j = 0; j < labels_count; j++)
 		{
 		   if (labels[j].pixel_cnt >= 20) {
-		       printf("labels ID %d \n", labels[j].id);
+		       printf("labels ID %d \t", labels[j].id);
 		       printf("labels cnt %d \n", labels[j].pixel_cnt);
 		   }
 		}
@@ -333,13 +333,13 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	printf("image height: %d \t", emsimg->h);
-        printf("image width: %d \t", emsimg->w);
+	//printf("image height: %d \t", emsimg->h);
+        //printf("image width: %d \t", emsimg->w);
 
         //emmacount = image_yuv422_colorfilt(emsimg,emsimg,color_lum_min,color_lum_max,color_cb_min,color_cb_max,color_cr_min,color_cr_max);
         //printf("emmacount is: %d \n", emmacount);
 
-        ScanObjects(emsimg);
+        //ScanObjects(emsimg);
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(k-1)*2+1]);

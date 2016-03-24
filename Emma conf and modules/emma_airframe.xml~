@@ -47,12 +47,12 @@
     <load name="cv_colorfilter.xml"/>
     <!--<load name="orange_avoider.xml"/>-->
     <load name="emma1.xml"/> 
-    
+    <!--
     <load name="video_rtp_stream.xml">
       <define name="VIEWVIDEO_QUALITY_FACTOR" value="80"/>
       <define name="VIEWVIDEO_DOWNSIZE_FACTOR" value="1"/>
     </load>
-    
+    -->
   </modules>
 
   <commands>
