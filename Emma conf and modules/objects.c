@@ -1,3 +1,5 @@
+#include "blob_finder.h"
+#include <stdio.h>
 #include <stdlib.h>     /* qsort */
 
 void ScanObjects(struct image_t *img)
@@ -39,7 +41,7 @@ void ScanObjects(struct image_t *img)
 		   printf(labels[i].id);
 		}
 		
-		uint16_t xtarget = BestEscape(labels, img->w);
+		// uint16_t xtarget = BestEscape(labels, img->w);
 		
 	}
 
