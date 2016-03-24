@@ -225,9 +225,9 @@ uint8_t ScanObjects(struct image_t *img)
 	//Orange pole detector
 
 	uint8_t margin = 30;
-	uint8_t ymin   = 4;//144 - margin;
-	uint8_t ymax   = 91;//144 + margin;
-	uint8_t umin   = 0;//92  - margin;
+	uint8_t ymin   = 70;//144 - margin;
+	uint8_t ymax   = 134;//144 + margin;
+	uint8_t umin   = 70;//92  - margin;
 	uint8_t umax   = 124;//92  + margin;
 	uint8_t vmin   = 127;//145 - margin;
 	uint8_t vmax   = 255;//145 + margin;
@@ -253,7 +253,7 @@ uint8_t ScanObjects(struct image_t *img)
 	{
 		for(int j = 0; j < labels_count; j++)
 		{
-		   if (labels[j].pixel_cnt >= 20) {
+		   if (labels[j].pixel_cnt >= 100) {
 		       printf("labels ID %d \t", labels[j].id);
 		       printf("labels cnt %d \n", labels[j].pixel_cnt);
 		   }

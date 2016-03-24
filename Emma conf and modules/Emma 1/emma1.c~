@@ -225,9 +225,9 @@ uint8_t ScanObjects(struct image_t *img)
 	//Orange pole detector
 
 	uint8_t margin = 30;
-	uint8_t ymin   = 4;//144 - margin;
-	uint8_t ymax   = 91;//144 + margin;
-	uint8_t umin   = 0;//92  - margin;
+	uint8_t ymin   = 70;//144 - margin;
+	uint8_t ymax   = 134;//144 + margin;
+	uint8_t umin   = 70;//92  - margin;
 	uint8_t umax   = 124;//92  + margin;
 	uint8_t vmin   = 127;//145 - margin;
 	uint8_t vmax   = 255;//145 + margin;
@@ -253,7 +253,7 @@ uint8_t ScanObjects(struct image_t *img)
 	{
 		for(int j = 0; j < labels_count; j++)
 		{
-		   if (labels[j].pixel_cnt >= 20) {
+		   if (labels[j].pixel_cnt >= 269) {
 		       printf("labels ID %d \t", labels[j].id);
 		       printf("labels cnt %d \n", labels[j].pixel_cnt);
 		   }
@@ -333,8 +333,8 @@ uint8_t emma69(uint8_t waypoint) {
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
 	
-	printf("image height: %d \t", emsimg->h);
-        printf("image width: %d \t", emsimg->w);
+	//printf("image height: %d \t", emsimg->h);
+        //printf("image width: %d \t", emsimg->w);
 
         //emmacount = image_yuv422_colorfilt(emsimg,emsimg,color_lum_min,color_lum_max,color_cb_min,color_cb_max,color_cr_min,color_cr_max);
         //printf("emmacount is: %d \n", emmacount);
