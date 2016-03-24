@@ -220,52 +220,6 @@ void image_labeling(struct image_t *input, struct image_t *output, struct image_
     }
   }
 }
-uint8_t ScanObjects(struct image_t *img)
-{
-	//Orange pole detector
-
-	uint8_t margin = 30;
-	uint8_t ymin   = 70;//144 - margin;
-	uint8_t ymax   = 134;//144 + margin;
-	uint8_t umin   = 70;//92  - margin;
-	uint8_t umax   = 124;//92  + margin;
-	uint8_t vmin   = 127;//145 - margin;
-	uint8_t vmax   = 255;//145 + margin;
-
-	struct image_filter_t filter[2];
-	filter[0].y_min = ymin;
-  	filter[0].y_max = ymax;
-  	filter[0].u_min = umin;
-  	filter[0].u_max = umax;
-  	filter[0].v_min = vmin;
-  	filter[0].v_max = vmax;
-
-	uint16_t labels_count = 512;
-  	struct image_label_t labels[512];
-
-	//struct image_t dst;
-	//image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
-
-	image_labeling(img, img, filter, 1, labels, &labels_count);
-
-
-	if (labels_count > 0)
-	{
-		for(int j = 0; j < labels_count; j++)
-		{
-		   if (labels[j].pixel_cnt >= 100) {
-		       printf("labels ID %d \t", labels[j].id);
-		       printf("labels cnt %d \n", labels[j].pixel_cnt);
-		   }
-		}
-		
-		//uint16_t xtarget = BestEscape(labels, img->w);
-		
-	}
-        else {printf("lol");}
-        
-        return FALSE;
-}
 int compare (const void * a, const void * b)
 {
   return ( *(int*)a - *(int*)b );
@@ -314,6 +268,53 @@ uint16_t BestEscape(struct image_label_t labels, uint16_t width)
 	
 	return BiggestOpenDist / 2 + map[BiggestOpenIndex];	
 
+}
+uint8_t ScanObjects(struct image_t *img)
+{
+	//Orange pole detector
+
+	uint8_t margin = 30;
+	uint8_t ymin   = 70;//144 - margin;
+	uint8_t ymax   = 134;//144 + margin;
+	uint8_t umin   = 70;//92  - margin;
+	uint8_t umax   = 124;//92  + margin;
+	uint8_t vmin   = 127;//145 - margin;
+	uint8_t vmax   = 255;//145 + margin;
+        uint16_t xtarget = 0;
+
+	struct image_filter_t filter[2];
+	filter[0].y_min = ymin;
+  	filter[0].y_max = ymax;
+  	filter[0].u_min = umin;
+  	filter[0].u_max = umax;
+  	filter[0].v_min = vmin;
+  	filter[0].v_max = vmax;
+
+	uint16_t labels_count = 512;
+  	struct image_label_t labels[512];
+
+	//struct image_t dst;
+	//image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
+
+	image_labeling(img, img, filter, 1, labels, &labels_count);
+
+
+	if (labels_count > 0)
+	{
+		for(int j = 0; j < labels_count; j++)
+		{
+		   if (labels[j].pixel_cnt >= 100) {
+		       printf("labels ID %d \t", labels[j].id);
+		       printf("labels cnt %d \n", labels[j].pixel_cnt);
+		   }
+		}
+		
+		xtarget = BestEscape(labels, img->w);
+		
+	}
+        else {printf("lol");}
+        
+        return FALSE;
 }
 uint8_t emma69(uint8_t waypoint) {
 	float wp1_x = -0.45;
