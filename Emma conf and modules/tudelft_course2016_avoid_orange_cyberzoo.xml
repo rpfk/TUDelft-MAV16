@@ -40,7 +40,7 @@
     </sector>
   </sectors>
   <exceptions>
-    <!-- <exception cond="!InsideCyberZoo(GetPosX(), GetPosY())" deroute="Standby"/> -->
+    <exception cond="!InsideCyberZoo(GetPosX(), GetPosY())" deroute="Standby"/>
     <exception cond="datalink_time > 2" deroute="Land here"/>
     <exception cond="electrical.bat_low && !(nav_block == IndexOfBlock('Land')) && !(nav_block == IndexOfBlock('Flare')) && !(nav_block == IndexOfBlock('Landed'))" deroute="Land"/>
     <exception cond="electrical.bat_critical && !(nav_block == IndexOfBlock('Land')) && !(nav_block == IndexOfBlock('Flare')) && !(nav_block == IndexOfBlock('Landed'))" deroute="Land here"/>
@@ -62,7 +62,6 @@
       <call fun="NavResurrect()"/>
       <attitude pitch="0" roll="0" throttle="0" until="FALSE" vmode="throttle"/>
     </block>
-<!--
     <block key="t" name="Takeoff" strip_button="Takeoff" strip_icon="takeoff.png">
       <exception cond="stateGetPositionEnu_f()->z > 1.25" deroute="Standby"/>
       <call fun="NavSetWaypointHere(WP_CLIMB)"/>
@@ -79,11 +78,10 @@
       <go wp="GOAL"/>
       <exception cond="block_time > 0.1" deroute="Emma Gaat Los"/>
     </block>
--->
     <block name="Emma Gaat Los">
       <call fun="emma69(WP_GOAL)"/>
-      <!-- <deroute block="StayGoal"/> -->
-      <exception cond="block_time > 0.1" deroute="Emma Gaat Los"/>
+      <deroute block="StayGoal"/>
+      <!-- <exception cond="block_time > 0.1" deroute="Emma Gaat Los"/> -->
     </block>
     <block key="l" name="Land here" strip_button="Land Here" strip_icon="land-right.png">
       <call fun="NavSetWaypointHere(WP_TD)"/>

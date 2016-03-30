@@ -327,7 +327,7 @@ uint8_t emma69(uint8_t waypoint) {
 	float wp2_x = -0.0;
 	float wp2_y = 0.0;
         float h2 = 0.0;
-	float wp3_x = -0.0;
+	float wp3_x = 0.0;
 	float wp3_y = 0.0;
         float h3 = 0.0;
 	float wp4_x = -0.0;
@@ -398,13 +398,13 @@ uint8_t emma69(uint8_t waypoint) {
 
         //xtarget = ScanObjects(emsimg);
 
-        
+        /*
 	if (xtarget <= 125) {
             // turn left
             newheading = prevheading - 45;
 	    if (newheading < 0) {newheading = newheading + 360;}
 	    if (newheading > 360) {newheading = newheading - 360;} 
-	    printf("newheading: %d", newheading);
+	    printf("newheading: %d \n", newheading);
             nav_set_heading_deg(newheading);
 	    prevheading = newheading;
         }
@@ -416,13 +416,12 @@ uint8_t emma69(uint8_t waypoint) {
             newheading = prevheading + 45;
 	    if (newheading < 0) {newheading = newheading + 360;}
 	    if (newheading > 360) {newheading = newheading - 360;}
-            printf("newheading: %d", newheading); 
+            printf("newheading: %d \n", newheading); 
             nav_set_heading_deg(newheading);
 	    prevheading = newheading;
-	} 
-	
-        
-	
+	}       
+	*/
+
 	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(k-1)*2+1]);
 	new_coor.z = pos->z;

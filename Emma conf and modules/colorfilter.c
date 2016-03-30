@@ -43,7 +43,7 @@ uint8_t color_cr_max  = 255;
 
 int color_count = 0;
 int xtarget = 0;
-struct image_t *emsimg; 
+//struct image_t *emsimg; 
 
 void image_labeling(struct image_t *input, struct image_t *output, struct image_filter_t *filters, uint8_t filters_cnt,
                     struct image_label_t *labels, uint16_t *labels_count)
@@ -207,14 +207,14 @@ void image_labeling(struct image_t *input, struct image_t *output, struct image_
     }
   }
 }
-int compare (const void * a, const void * b)
+/*int compare (const void * a, const void * b)
 {
   return ( *(int*)a - *(int*)b );
-}
+}*/
 uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t labels_count)
 {
 
-	uint16_t map[20];
+	uint16_t map[1030];
 	map[0] = 0;
         uint16_t x_max = 0;
 
@@ -233,9 +233,9 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 		map[labels_count*2 + 1] = width;
 	}
 
-	// uint16_t sortedmap[20];
+	//uint16_t sortedmap[20];
 
-	qsort (map, 20, sizeof(uint16_t), compare);
+	//qsort (map, 20, sizeof(uint16_t), compare);
 
 	int BiggestOpenDist = 0;
 	int BiggestOpenIndex = 0;
@@ -281,19 +281,22 @@ uint8_t ScanObjects(struct image_t *img)
 	uint16_t labels_count = 512;
   	struct image_label_t labels[512];
 
-	//struct image_t dst;
-	//image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
+	struct image_t dst;
+	image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
 
-	image_labeling(img, img, filter, 1, labels, &labels_count);
+	image_labeling(img, &dst, filter, 1, labels, &labels_count);
 
+        image_copy(&dst,img);
+
+        image_free(&dst);
 
 	if (labels_count > 0)
 	{
 		for(int j = 0; j < labels_count; j++)
 		{
 		   if (labels[j].pixel_cnt >= 100) {
-		       printf("labels ID %d \t", labels[j].id);
-		       printf("labels cnt %d \n", labels[j].pixel_cnt);
+		       //printf("labels ID %d \t", labels[j].id);
+		       //printf("labels cnt %d \n", labels[j].pixel_cnt);
 		   }
 		}
 		
@@ -302,6 +305,8 @@ uint8_t ScanObjects(struct image_t *img)
 	}
         else {printf("lol");}
         
+        //free(labels);
+
         return xtarget;
 }
 bool_t colorfilter_func(struct image_t* img);
