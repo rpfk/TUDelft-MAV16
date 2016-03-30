@@ -23,9 +23,6 @@
  * This is a first module for Emma
  */
 
-//#ifndef BEBOP_FRONT_CAMERA_H
-//#define BEBOP_FRONT_CAMERA_H
-
 #include "modules/emma1/emma1.h"
 #include "modules/computer_vision/colorfilter.h"
 #include "firmwares/rotorcraft/navigation.h"
@@ -35,11 +32,12 @@
 #include <stdio.h>
 #include <inttypes.h>
 //#include "modules/computer_vision/blob/blob_finder.h"
-#include "modules/computer_vision/lib/vision/image.h"
-#include "modules/computer_vision/cv.h"
-#include "modules/computer_vision/bebop_front_camera.h"
-#include "modules/computer_vision/video_thread.h"
+//#include "modules/computer_vision/lib/vision/image.h"
+//#include "modules/computer_vision/cv.h"
+//#include "modules/computer_vision/bebop_front_camera.h"
+//#include "modules/computer_vision/video_thread.h"
 
+//#include "firmwares/rotorcraft/autopilot.h"
 
 int k = 1;
 int emmacount = 0;
@@ -59,6 +57,7 @@ void emmafunction() {
         //printf("wouter is: %d", color_count);
 	
 }
+/* 
 void image_labeling(struct image_t *input, struct image_t *output, struct image_filter_t *filters, uint8_t filters_cnt,
                     struct image_label_t *labels, uint16_t *labels_count)
 {
@@ -271,6 +270,8 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 	return BiggestOpenDist / 2 + map[BiggestOpenIndex];	
 
 }
+*/
+/*
 uint8_t ScanObjects(struct image_t *img)
 {
 	//Orange pole detector
@@ -295,10 +296,10 @@ uint8_t ScanObjects(struct image_t *img)
 	uint16_t labels_count = 512;
   	struct image_label_t labels[512];
 
-	//struct image_t dst;
-	//image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
+	struct image_t dst;
+	image_create(&dst, img->w, img->h, IMAGE_GRADIENT);
 
-	image_labeling(img, img, filter, 1, labels, &labels_count);
+	image_labeling(img, &dst, filter, 1, labels, &labels_count);
 
 
 	if (labels_count > 0)
@@ -318,6 +319,7 @@ uint8_t ScanObjects(struct image_t *img)
         
         return xtarget;
 }
+*/
 uint8_t emma69(uint8_t waypoint) {
 	float wp1_x = -0.0;
 	float wp1_y = 0.0;
@@ -334,7 +336,7 @@ uint8_t emma69(uint8_t waypoint) {
 	float dist_threshold = 0.1;
 	double wps[8] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y, wp4_x, wp4_y};
         double headings[4] = {h1,h2,h3,h4}; 
-        uint8_t xtarget = 0;
+        //uint8_t xtarget = 0;
         uint8_t prevheading = 0;
         uint8_t newheading = 0;
 
@@ -394,17 +396,19 @@ uint8_t emma69(uint8_t waypoint) {
         //emmacount = image_yuv422_colorfilt(emsimg,emsimg,color_lum_min,color_lum_max,color_cb_min,color_cb_max,color_cr_min,color_cr_max);
         //printf("emmacount is: %d \n", emmacount);
 
-        xtarget = ScanObjects(emsimg);
+        //xtarget = ScanObjects(emsimg);
 
-        if (xtarget <= 125) {
+        
+	if (xtarget <= 125) {
             // turn left
             newheading = prevheading - 45;
 	    if (newheading < 0) {newheading = newheading + 360;}
 	    if (newheading > 360) {newheading = newheading - 360;} 
 	    printf("newheading: %d", newheading);
             nav_set_heading_deg(newheading);
+	    prevheading = newheading;
         }
-        else if (125 < xtarget < 145) {
+        else if (125 < xtarget && xtarget < 145) {
             // continue straight        
         }
         else if (xtarget >= 145) {
@@ -414,7 +418,9 @@ uint8_t emma69(uint8_t waypoint) {
 	    if (newheading > 360) {newheading = newheading - 360;}
             printf("newheading: %d", newheading); 
             nav_set_heading_deg(newheading);
-	}
+	    prevheading = newheading;
+	} 
+	
         
 	
 	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);

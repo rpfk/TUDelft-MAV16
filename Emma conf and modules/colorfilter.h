@@ -41,6 +41,7 @@ extern uint8_t color_cr_min;
 extern uint8_t color_cr_max;
 
 extern int color_count;
+extern int xtarget;
 extern struct image_t *emsimg;
 
 #endif /* COLORFILTER_CV_PLUGIN_H */
