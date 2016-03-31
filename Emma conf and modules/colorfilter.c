@@ -240,17 +240,17 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 		}
 	}
 	
-	openCurrent = width - xcgLast;
+	openCurrent = width/2 - xcgLast;
 	if(openCurrent > openBiggest){
 		xt = (width + xcgLast)/2;
 		openBiggest = openCurrent;
 	}
 	
 	if(k == 0){
-		xt = 136;
+		xt = 68;
 	}
 	
-	return xt;
+	return xt*2;
 }
 
 
