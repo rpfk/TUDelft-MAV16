@@ -398,7 +398,7 @@ uint8_t emma69(uint8_t waypoint) {
 
         //xtarget = ScanObjects(emsimg);
 
-        /*
+        
 	if (xtarget <= 125) {
             // turn left
             newheading = prevheading - 45;
@@ -420,7 +420,7 @@ uint8_t emma69(uint8_t waypoint) {
             nav_set_heading_deg(newheading);
 	    prevheading = newheading;
 	}       
-	*/
+	
 
 	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);
 	new_coor.y = POS_BFP_OF_REAL(wps[(k-1)*2+1]);

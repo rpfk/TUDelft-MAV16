@@ -210,6 +210,7 @@ void image_labeling(struct image_t *input, struct image_t *output, struct image_
 int compare (const void * a, const void * b)
 {
   return ( *(int*)a - *(int*)b );
+<<<<<<< HEAD
 }
 uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t labels_count)
 {
@@ -220,10 +221,13 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
         uint16_t x_max = 0;
 	int k = 0;
 =======
+=======
+}*/
+uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t labels_count){
+>>>>>>> a17ff1b4239ce0508d3364ddbd9321b2a533f427
 	//uint16_t map[1030];
 	//map[0] = 0;
         //uint16_t x_max = 0;
-        
     int xcg = 0;
 	int xcgLast = 0;
 	int k = 0;
@@ -232,28 +236,38 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 	int xt = 0;
 	
 	for(int i = 0; i < labels_count; i++){
-
-	if(labels[i].pixel_cnt > 100)
-	{
-		xcg = labels[i].x_sum / labels[i].pixel_cnt;
-		openCurrent = xcg - xcgLast;
-
-		if(openCurrent > openBiggest)
-		{
-			xt = (xcg + xcgLast)/2;
-			openBiggest = openCurrent;
+		if(labels[i].pixel_cnt > 100){
+			xcg = labels[i].x_sum / labels[i].pixel_cnt;
+			openCurrent = xcg - xcgLast;
+	
+			if(openCurrent > openBiggest)
+			{
+				xt = (xcg + xcgLast)/2;
+				openBiggest = openCurrent;
+			}
+			
+			xcgLast = xcg;
+			k++;
 		}
-		
-		xcgLast = xcg;
-		k++;
-
 	}
+<<<<<<< HEAD
 >>>>>>> 35cbd604d5362cfa090ca0c56a5d85154c2bdbac
 
+=======
+	
+	openCurrent = width - xcgLast;
+	if(openCurrent > openBiggest){
+		xt = (width + xcgLast)/2;
+		openBiggest = openCurrent;
+	}
+	
+>>>>>>> a17ff1b4239ce0508d3364ddbd9321b2a533f427
 	if(k == 0){
 		xt = 136;
 	}
-} 
+	
+	return xt;
+}
 	
 	/*
 	for(int i = 0; i < labels_count; i++)
@@ -321,10 +335,12 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 	
 	return BiggestOpenDist / 2 + map[BiggestOpenIndex];
 	*/
-	return xt;
 
+<<<<<<< HEAD
 >>>>>>> 35cbd604d5362cfa090ca0c56a5d85154c2bdbac
 }
+=======
+>>>>>>> a17ff1b4239ce0508d3364ddbd9321b2a533f427
 uint8_t ScanObjects(struct image_t *img)
 {
 	//Orange pole detector
