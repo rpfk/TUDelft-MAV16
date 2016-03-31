@@ -35,7 +35,7 @@
 // cb is equiv to U
 // cr is equiv to V
 uint8_t color_lum_min = 4;
-uint8_t color_lum_max = 91;
+uint8_t color_lum_max = 200;
 uint8_t color_cb_min  = 0;
 uint8_t color_cb_max  = 124;
 uint8_t color_cr_min  = 127;
@@ -207,11 +207,51 @@ void image_labeling(struct image_t *input, struct image_t *output, struct image_
     }
   }
 }
-int compare (const void * a, const void * b)
-{
-  return ( *(int*)a - *(int*)b );
-}
+//int compare (const void * a, const void * b)
+//{
+// return ( *(int*)a - *(int*)b );
+//}
 
+uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t labels_count){
+	//uint16_t map[1030];
+	//map[0] = 0;
+        //uint16_t x_max = 0;
+    	
+	int xcg = 0;
+	int xcgLast = 0;
+	int k = 0;
+	int openCurrent = 0;
+	int openBiggest = 0;
+	int xt = 0;
+	
+	for(int i = 0; i < labels_count; i++){
+		if(labels[i].pixel_cnt > 100){
+			xcg = labels[i].x_sum / labels[i].pixel_cnt;
+			openCurrent = xcg - xcgLast;
+	
+			if(openCurrent > openBiggest)
+			{
+				xt = (xcg + xcgLast)/2;
+				openBiggest = openCurrent;
+			}
+			
+			xcgLast = xcg;
+			k++;
+		}
+	}
+	
+	openCurrent = width - xcgLast;
+	if(openCurrent > openBiggest){
+		xt = (width + xcgLast)/2;
+		openBiggest = openCurrent;
+	}
+	
+	if(k == 0){
+		xt = 136;
+	}
+	
+	return xt;
+}
 
 
 uint8_t ScanObjects(struct image_t *img)
@@ -219,8 +259,8 @@ uint8_t ScanObjects(struct image_t *img)
 	//Orange pole detector
 
 	//uint8_t margin = 30;
-	uint8_t ymin   = 70;//144 - margin;
-	uint8_t ymax   = 134;//144 + margin;
+	uint8_t ymin   = 60;//144 - margin;
+	uint8_t ymax   = 100;//144 + margin;
 	uint8_t umin   = 70;//92  - margin;
 	uint8_t umax   = 124;//92  + margin;
 	uint8_t vmin   = 127;//145 - margin;
@@ -257,7 +297,7 @@ uint8_t ScanObjects(struct image_t *img)
 		   }
 		}
 		
-		xtarget = BestEscape(labels, img->w,labels_count)*2;
+		xtarget = BestEscape(labels, img->w,labels_count);
 		printf("xtarget: %d \n",xtarget);
 	}
         else {printf("lol");}

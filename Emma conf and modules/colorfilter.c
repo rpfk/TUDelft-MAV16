@@ -35,7 +35,7 @@
 // cb is equiv to U
 // cr is equiv to V
 uint8_t color_lum_min = 4;
-uint8_t color_lum_max = 91;
+uint8_t color_lum_max = 200;
 uint8_t color_cb_min  = 0;
 uint8_t color_cb_max  = 124;
 uint8_t color_cr_min  = 127;
@@ -259,8 +259,8 @@ uint8_t ScanObjects(struct image_t *img)
 	//Orange pole detector
 
 	//uint8_t margin = 30;
-	uint8_t ymin   = 70;//144 - margin;
-	uint8_t ymax   = 134;//144 + margin;
+	uint8_t ymin   = 60;//144 - margin;
+	uint8_t ymax   = 100;//144 + margin;
 	uint8_t umin   = 70;//92  - margin;
 	uint8_t umax   = 124;//92  + margin;
 	uint8_t vmin   = 127;//145 - margin;
@@ -297,8 +297,8 @@ uint8_t ScanObjects(struct image_t *img)
 		   }
 		}
 		
-		xtarget = BestEscape(labels, img->w,labels_count)*2;
-		printf("xtarget: %d \n",xtarget);
+		xtarget = BestEscape(labels, img->w,labels_count);
+		//printf("xtarget: %d \n",xtarget);
 	}
         else {printf("lol");}
         
