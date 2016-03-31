@@ -394,7 +394,8 @@ uint8_t emma69(uint8_t waypoint) {
 	if (newheading < 0) {newheading = newheading + 360;}
 	if (newheading > 360) {newheading = newheading - 360;}
 
-	prevheading = newheading
+	nav_set_heading_deg(newheading);
+	prevheading = newheading;
 
 	//move waypoint forward
 	wpXNew = POS_FLOAT_OF_BFP(pos->x) + cos(newheading/180*3.1415);
