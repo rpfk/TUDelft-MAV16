@@ -214,10 +214,41 @@ void image_labeling(struct image_t *input, struct image_t *output, struct image_
 uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t labels_count)
 {
 
-	uint16_t map[1030];
-	map[0] = 0;
-        uint16_t x_max = 0;
+	//uint16_t map[1030];
+	//map[0] = 0;
+        //uint16_t x_max = 0;
+        
+    int xcg = 0;
+	int xcgLast = 0;
+	int k = 0;
+	int openCurrent = 0;
+	int openBiggest = 0;
+	int xt = 0;
+	
+	for(int i = 0; i < labels_count; i++){
 
+	if(labels[i].pixel_cnt > 100)
+	{
+		xcg = labels[i].x_sum / labels[i].pixel_cnt;
+		openCurrent = xcg - xcgLast;
+
+		if(openCurrent > openBiggest)
+		{
+			xt = (xcg + xcgLast)/2;
+			openBiggest = openCurrent;
+		}
+		
+		xcgLast = xcg;
+		k++;
+
+	}
+
+	if(k == 0){
+		xt = 136;
+	}
+} 
+	
+	/*
 	for(int i = 0; i < labels_count; i++)
 	{
 		// printf(labels[i].x_min);		
@@ -232,11 +263,13 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 	{
 		map[labels_count*2 + 1] = width;
 	}
+	*/
+	
 
 	//uint16_t sortedmap[20];
 
 	//qsort (map, 20, sizeof(uint16_t), compare);
-
+	/*
 	int BiggestOpenDist = 0;
 	int BiggestOpenIndex = 0;
 	int CurrentOpenDist = 0;
@@ -254,7 +287,9 @@ uint16_t BestEscape(struct image_label_t *labels, uint16_t width, uint16_t label
 	}
 	
 	
-	return BiggestOpenDist / 2 + map[BiggestOpenIndex];	
+	return BiggestOpenDist / 2 + map[BiggestOpenIndex];
+	*/
+	return xt;
 
 }
 uint8_t ScanObjects(struct image_t *img)
