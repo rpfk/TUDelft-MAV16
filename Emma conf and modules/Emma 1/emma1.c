@@ -320,6 +320,9 @@ uint8_t ScanObjects(struct image_t *img)
         return xtarget;
 }
 */
+
+
+
 uint8_t emma69(uint8_t waypoint) {
 	float wp1_x = -0.0;
 	float wp1_y = 0.0;
