@@ -322,23 +322,12 @@ uint8_t ScanObjects(struct image_t *img)
 */
 
 
-
 uint8_t emma69(uint8_t waypoint) {
-	float wp1_x = -0.0;
-	float wp1_y = 0.0;
-        float h1 = 0.0;
-	float wp2_x = -0.0;
-	float wp2_y = 0.0;
-        float h2 = 0.0;
-	float wp3_x = 0.0;
-	float wp3_y = 0.0;
-        float h3 = 0.0;
-	float wp4_x = -0.0;
-	float wp4_y = 0.0;
-        float h4 = 0.0;
-	float dist_threshold = 0.1;
-	double wps[8] = {wp1_x, wp1_y, wp2_x, wp2_y, wp3_x, wp3_y, wp4_x, wp4_y};
-        double headings[4] = {h1,h2,h3,h4}; 
+	
+	float dist_forward = 0.8;
+	float circle_radius = 2.5;
+	float wpXNew = 0.0;
+	float wpYNew = 0.0;
         //uint8_t xtarget = 0;
         uint8_t prevheading = 0;
         uint8_t newheading = 0;
@@ -360,35 +349,6 @@ uint8_t emma69(uint8_t waypoint) {
         printf("wpY: %f \t", wpY);
         printf("\n");
         
-	//float dist_curr = POS_FLOAT_OF_BFP((POS_BFP_OF_REAL(wpX) -  pos->x)*(POS_BFP_OF_REAL(wpX) -  pos->x) + (POS_BFP_OF_REAL(wpY) -  pos->y)*(POS_BFP_OF_REAL(wpY) -  pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
-	
-	float dist_curr = (wpX -  POS_FLOAT_OF_BFP(pos->x))*(wpX -  POS_FLOAT_OF_BFP(pos->x)) + (wpY -  POS_FLOAT_OF_BFP(pos->y))*(wpY -  POS_FLOAT_OF_BFP(pos->y)); // POS_BFP_OF_REAL POS_FLOAT_OF_BFP(pos->x)
-
-	printf("Dist to current wp \t");	
-        printf("dist_curr: %f \t", dist_curr);        
-        printf("\n");
-
-        //float dist1 = (wpX - wp1_x)*(wpX - wp1_x) + (wpY - wp1_y)*(wpY - wp1_y); // Dist between current wp and navigation wps
-	//float dist2 = (wpX - wp2_x)*(wpX - wp2_x) + (wpY - wp2_y)*(wpY - wp2_y);
-	//float dist3 = (wpX - wp3_x)*(wpX - wp3_x) + (wpY - wp3_y)*(wpY - wp3_y);
-	
-	
-	//if (dist1 < dist2 && dist1 < dist3){i=1;} 
-	//else if (dist2 < dist1 && dist2 < dist3){i=2;}
-	//else {i=3;}
-
-	if (dist_curr < dist_threshold*dist_threshold){
-		k = k + 1;
-		if (k> 4){k=1;}
-	}
-
-	// Set the waypoint to the calculated position
-        printf("Set waypoint to \t");
-	printf("k: %d \t", k);
-	printf("wpsX: %f \t",wps[(k-1)*2]);
-	printf("wpsY: %f \t",wps[(k-1)*2+1]);
-        printf("\n");
-
 	//struct image_t *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct a *img = v4l2_image_get(bebop_front_camera.dev, &img);
 	//struct image_t *img;
@@ -401,7 +361,7 @@ uint8_t emma69(uint8_t waypoint) {
 
         //xtarget = ScanObjects(emsimg);
 
-        
+        /*
 	if (xtarget <= 125) {
             // turn left
             newheading = prevheading - 45;
@@ -422,18 +382,38 @@ uint8_t emma69(uint8_t waypoint) {
             printf("newheading: %d \n", newheading); 
             nav_set_heading_deg(newheading);
 	    prevheading = newheading;
-	}       
+	} */
+
+	newheading = prevheading + (xtarget-136)/136*80;
+	
+	if (POS_FLOAT_OF_BFP(pos->x)*POS_FLOAT_OF_BFP(pos->x) + POS_FLOAT_OF_BFP(pos->y)*POS_FLOAT_OF_BFP(pos->y) > circle_radius*circle_radius){
+
+		newheading = 90 - atan2(-POS_FLOAT_OF_BFP(pos->y),-POS_FLOAT_OF_BFP(pos->x))*180/3.1415;
+	}
+	
+	if (newheading < 0) {newheading = newheading + 360;}
+	if (newheading > 360) {newheading = newheading - 360;}
+
+	prevheading = newheading
+
+	//move waypoint forward
+	wpXNew = POS_FLOAT_OF_BFP(pos->x) + cos(newheading/180*3.1415);
+	wpYNew = POS_FLOAT_OF_BFP(pos->y) + sin(newheading/180*3.1415);	
+
+	// Set the waypoint to the calculated position
+        printf("Set waypoint to \t");
+	printf("wpsX: %f \t",wpXNew);
+	printf("wpsY: %f \t",wpYNew);
+        printf("\n");
 	
 
-	new_coor.x = POS_BFP_OF_REAL(wps[(k-1)*2]);
-	new_coor.y = POS_BFP_OF_REAL(wps[(k-1)*2+1]);
+	new_coor.x = POS_BFP_OF_REAL(wpXNew);
+	new_coor.y = POS_BFP_OF_REAL(wpYNew);
 	new_coor.z = pos->z;
 
 	// Set the waypoint to the calculated position
         waypoint_set_xy_i(waypoint, new_coor.x, new_coor.y);
-        
-        // Set heading to requested
-        //nav_set_heading_deg(headings[k-1]);
+
 
         printf("\n");
 	printf("\n");
