@@ -1,0 +1,51 @@
+Current pos     posX= 0.617188  posY= -1.906250         
+Set waypoint to         wpsX: 1.117188  wpsY: -1.906250         newheading: 0   xtarget: 141
+
+
+Current pos     posX= 0.589844  posY= -1.917969         
+Set waypoint to         wpsX: 1.089844  wpsY: -1.917969         newheading: 0   xtarget: 141
+
+
+Current pos     posX= 0.628906  posY= -1.976562         
+Set waypoint to         wpsX: 1.128906  wpsY: -1.976562         newheading: 0   xtarget: 151
+
+
+Current pos     posX= 0.906250  posY= -2.007812         
+Set waypoint to         wpsX: 1.406250  wpsY: -2.007812         newheading: 0   xtarget: 191
+
+
+Current pos     posX= 1.226562  posY= -2.007812         
+Set waypoint to         wpsX: 1.726562  wpsY: -2.007812         newheading: 0   xtarget: 190
+
+
+Current pos     posX= 1.289062  posY= -2.000000         
+Set waypoint to         wpsX: 1.789062  wpsY: -2.000000         newheading: 0   xtarget: 143
+
+
+Current pos     posX= 1.527344  posY= -2.000000         
+Set waypoint to         wpsX: 2.027344  wpsY: -2.000000         newheading: 0   xtarget: 189
+
+
+Current pos     posX= 1.726562  posY= -2.019531         
+Set waypoint to         wpsX: 2.226562  wpsY: -2.019531         newheading: 0   xtarget: 141
+
+
+Current pos     posX= 1.988281  posY= -2.058594         
+Set waypoint to         wpsX: 2.488281  wpsY: -2.058594         newheading: 0   xtarget: 141
+
+
+Current pos     posX= 2.136719  posY= -2.167969         
+Set waypoint to         wpsX: 2.636719  wpsY: -2.167969         newheading: 0   xtarget: 140
+
+
+Current pos     posX= 1.968750  posY= -2.437500         
+Set waypoint to         wpsX: 2.468750  wpsY: -2.437500         newheading: 0   xtarget: 147
+
+
+Current pos     posX= 1.847656  posY= -2.707031         
+Set waypoint to         wpsX: 2.347656  wpsY: -2.707031         newheading: 0   xtarget: 151
+
+
+Current pos     posX= 1.847656  posY= -2.707031         
+Set waypoint to         wpsX: 2.347656  wpsY: -2.707031         newheading: 0   xtarget: 151
+

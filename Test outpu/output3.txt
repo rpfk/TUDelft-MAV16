@@ -1,0 +1,187 @@
+Current pos     posX= -0.539062         posY= -1.519531         
+Set waypoint to         wpsX: -0.443638         wpsY: -1.028722         newheading: 11  xtarget: 156
+
+
+Current pos     posX= -0.578125         posY= -1.500000         
+Set waypoint to         wpsX: -0.374741         wpsY: -1.043234         newheading: 24  xtarget: 159
+
+
+Current pos     posX= -0.558594         posY= -1.386719         
+Set waypoint to         wpsX: -0.243923         wpsY: -0.998154         newheading: 39  xtarget: 162
+
+
+Current pos     posX= -0.437500         posY= -1.136719         
+Set waypoint to         wpsX: -0.054471         wpsY: -0.815333         newheading: 50  xtarget: 155
+
+
+Current pos     posX= -0.406250         posY= -1.097656         
+Set waypoint to         wpsX: 0.031063  wpsY: -0.855258         newheading: 61  xtarget: 155
+
+
+Current pos     posX= -0.179688         posY= -0.847656         
+Set waypoint to         wpsX: 0.277088  wpsY: -0.644294         newheading: 66  xtarget: 145
+
+
+Current pos     posX= 0.066406  posY= -0.750000         
+Set waypoint to         wpsX: 0.563667  wpsY: -0.697737         newheading: 84  xtarget: 167
+
+
+Current pos     posX= 0.109375  posY= -0.738281         
+Set waypoint to         wpsX: 0.598449  wpsY: -0.842234         newheading: 102         xtarget: 167
+
+
+Current pos     posX= 0.367188  posY= -0.738281         
+Set waypoint to         wpsX: 0.842717  wpsY: -0.892785         newheading: 108         xtarget: 147
+
+
+Current pos     posX= 0.636719  posY= -0.816406         
+Set waypoint to         wpsX: 1.089875  wpsY: -1.027710         newheading: 115         xtarget: 148
+
+
+Current pos     posX= 0.867188  posY= -0.976562         
+Set waypoint to         wpsX: 1.304501  wpsY: -1.218961         newheading: 119         xtarget: 144
+
+
+Current pos     posX= 1.078125  posY= -1.128906         
+Set waypoint to         wpsX: 1.506713  wpsY: -1.386418         newheading: 121         xtarget: 140
+
+
+Current pos     posX= 1.109375  posY= -1.156250         
+Set waypoint to         wpsX: 1.528715  wpsY: -1.428562         newheading: 123         xtarget: 140
+
+
+Current pos     posX= 1.308594  posY= -1.289062         
+Set waypoint to         wpsX: 1.623264  wpsY: -1.677627         newheading: 141         xtarget: 167
+
+
+Current pos     posX= 1.539062  posY= -1.449219         
+Set waypoint to         wpsX: 1.539086  wpsY: -0.949219         newheading: 0   xtarget: 162
+
+
+Current pos     posX= 1.718750  posY= -1.476562         
+Set waypoint to         wpsX: 1.718773  wpsY: -0.976562         newheading: 0   xtarget: 155
+
+
+Current pos     posX= 1.457031  posY= -1.199219         
+Set waypoint to         wpsX: 1.526639  wpsY: -0.704088         newheading: 8   xtarget: 151
+
+
+Current pos     posX= 1.226562  posY= -0.828125         
+Set waypoint to         wpsX: 1.355991  wpsY: -0.345167         newheading: 15  xtarget: 148
+
+
+Current pos     posX= 1.257812  posY= -0.539062         
+Set waypoint to         wpsX: 1.530144  wpsY: -0.119735         newheading: 33  xtarget: 167
+
+
+Current pos     posX= 1.277344  posY= -0.519531         
+Set waypoint to         wpsX: 1.665923  wpsY: -0.204879         newheading: 51  xtarget: 167
+
+
+Current pos     posX= 1.488281  posY= -0.359375         
+Set waypoint to         wpsX: 1.912310  wpsY: -0.094422         newheading: 58  xtarget: 149
+
+
+Current pos     posX= 1.527344  posY= -0.328125         
+Set waypoint to         wpsX: 1.980500  wpsY: -0.116822         newheading: 65  xtarget: 149
+
+
+Current pos     posX= 1.777344  posY= -0.167969         
+Set waypoint to         wpsX: 2.237598  wpsY: 0.027391  newheading: 67  xtarget: 141
+
+
+Current pos     posX= 1.808594  posY= -0.167969         
+Set waypoint to         wpsX: 2.302438  wpsY: -0.089754         newheading: 81  xtarget: 160
+
+
+Current pos     posX= 2.066406  posY= -0.066406         
+Set waypoint to         wpsX: 2.066429  wpsY: 0.433594  newheading: 0   xtarget: 155
+
+
+Current pos     posX= 2.238281  posY= 0.046875  
+Set waypoint to         wpsX: 2.342257  wpsY: 0.535945  newheading: 12  xtarget: 147
+
+
+Current pos     posX= 2.109375  posY= 0.179688  
+Set waypoint to         wpsX: 2.187613  wpsY: 0.673528  newheading: 9   xtarget: 192
+
+
+Current pos     posX= 1.949219  posY= 0.437500  
+Set waypoint to         wpsX: 2.120246  wpsY: 0.907340  newheading: 20  xtarget: 156
+
+
+Current pos     posX= 2.019531  posY= 0.707031  
+Set waypoint to         wpsX: 1.549699  wpsY: 0.535982  newheading: 250         xtarget: 144
+
+
+Current pos     posX= 2.039062  posY= 0.750000  
+Set waypoint to         wpsX: 1.572287  wpsY: 0.570778  newheading: 249         xtarget: 144
+
+
+Current pos     posX= 2.046875  posY= 0.867188  
+Set waypoint to         wpsX: 1.586638  wpsY: 0.671785  newheading: 247         xtarget: 174
+
+
+Current pos     posX= 1.949219  posY= 0.558594  
+Set waypoint to         wpsX: 1.468600  wpsY: 0.420734  newheading: 254         xtarget: 190
+
+
+Current pos     posX= 1.648438  posY= 0.257812  
+Set waypoint to         wpsX: 1.811239  wpsY: 0.730566  newheading: 19  xtarget: 172
+
+
+Current pos     posX= 1.386719  posY= 0.328125  
+Set waypoint to         wpsX: 1.769748  wpsY: 0.649511  newheading: 50  xtarget: 189
+
+
+Current pos     posX= 1.457031  posY= 0.769531  
+Set waypoint to         wpsX: 1.898508  wpsY: 1.004261  newheading: 62  xtarget: 158
+
+
+Current pos     posX= 1.718750  posY= 1.089844  
+Set waypoint to         wpsX: 1.299435  wpsY: 0.817493  newheading: 237         xtarget: 155
+
+
+Current pos     posX= 1.886719  posY= 1.179688  
+Set waypoint to         wpsX: 1.467404  wpsY: 0.907336  newheading: 237         xtarget: 184
+
+
+Current pos     posX= 2.148438  posY= 1.027344  
+Set waypoint to         wpsX: 1.699058  wpsY: 0.808123  newheading: 244         xtarget: 152
+
+
+Current pos     posX= 1.917969  posY= 0.558594  
+Set waypoint to         wpsX: 2.080770  wpsY: 1.031347  newheading: 19  xtarget: 190
+
+
+Current pos     posX= 1.449219  posY= 0.519531  
+Set waypoint to         wpsX: 1.820798  wpsY: 0.854088  newheading: 48  xtarget: 186
+
+
+Current pos     posX= 1.378906  posY= 1.039062  
+Set waypoint to         wpsX: 1.811923  wpsY: 1.289056  newheading: 60  xtarget: 158
+
+
+Current pos     posX= 1.636719  posY= 1.117188  
+Set waypoint to         wpsX: 2.074032  wpsY: 1.359586  newheading: 61  xtarget: 139
+
+
+Current pos     posX= 1.878906  posY= 1.156250  
+Set waypoint to         wpsX: 1.454902  wpsY: 0.891258  newheading: 238         xtarget: 155
+
+
+Current pos     posX= 2.148438  posY= 0.757812  
+Set waypoint to         wpsX: 1.678605  wpsY: 0.586764  newheading: 250         xtarget: 163
+
+
+Current pos     posX= 2.097656  posY= 0.339844  
+Set waypoint to         wpsX: 2.132557  wpsY: 0.838624  newheading: 4   xtarget: 151
+
+
+Current pos     posX= 1.179688  posY= -0.636719         
+Set waypoint to         wpsX: 1.422106  wpsY: -0.199417         newheading: 29  xtarget: 180
+
+
+Current pos     posX= 0.226562  posY= -1.589844         
+Set waypoint to         wpsX: 0.625886  wpsY: -1.288944         newheading: 53  xtarget: 178
+

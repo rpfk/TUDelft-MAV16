@@ -1,2 +1,0 @@
-# TUDelft-MAV16
-We will develop an efficient, purely vision-based approach to autonomously navigate through an obstacle field. The algorithm will have to run onboard the Parrot AR drone 2, a commercially available quad rotor equipped with a range of sensors. Importantly for the project, it has a single frontal camera. Hence, the developed algorithm concerns a monocular vision solution to obstacle avoidance.

@@ -1,9 +1,6 @@
 <!DOCTYPE flight_plan SYSTEM "../flight_plan.dtd">
 
-<!-- DIT IS EEN AANGEPASTE EN NIET GETESTE VERSIE, PANIEK!!!!! -->
-
-
-<flight_plan alt="2" ground_alt="0" lat0="51.9906304" lon0="4.3767954" max_dist_from_home="8" name="Bebop avoid orange TU Delft Cyberzoo" security_height="0.4">
+<flight_plan alt="1." ground_alt="0" lat0="51.9906304" lon0="4.3767954" max_dist_from_home="8" name="Bebop avoid orange TU Delft Cyberzoo" security_height="0.4">
   <header>
 #include "autopilot.h"
 #include "subsystems/ahrs.h"
